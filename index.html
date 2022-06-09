@@ -3,66 +3,64 @@
   <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="styles.css">
+
     <title>Rock Paper Scissors</title>
   </head>
   <body>
-    <header>
-      <h1>Rock, Paper, Scissors</h1>
-      <h2 class="subheader">Choose your game!</h2>
-    </header
-    <aside>
-      <div>
-        <img src="assets/avatar.png" alt="female presenting avatar" width="100" height="100">
-        <h4>Player</h4>
-        <p>Wins: <span class="score" id="player-score">0<span></p>
-        <button class="change-game-btn hidden" type="button" name="game-choice-btn" id="gameChoiceButton">Change Game</button>
-      </div>
-
-    </aside>
-    <section class="game-choices-box">
-      <div>
-        <section class="classic-choice-box">
-          <h3>Classic</h3>
-          <p>Rock beats Scissors<br>
-            Paper beats Rock<br>
-            Scissors beats Paper<br>
-          </p>
+    <section class="entire-screen">
+      <aside class="side-panels">
+        <div class="players-score-board">
+          <img src="assets/avatar.png" alt="female presenting avatar" width="100" height="100">
+          <h4>Player</h4>
+          <p>Wins: <span class="score" id="player-score">0<span></p>
+          <button class="change-game-btn hidden" type="button" name="game-choice-btn" id="gameChoiceButton">Change Game</button>
+        </div>
+      </aside>
+      <section class="main-section">
+        <header>
+          <h1>Rock, Paper, Scissors</h1>
+          <h2 class="subheader">Choose your game!</h2>
+        </header>
+        <section class="choices-boxes">
+          <section class="classic-choice-box">
+            <h3>Classic</h3>
+            <p>Rock beats Scissors<br>
+              Paper beats Rock<br>
+              Scissors beats Paper<br>
+            </p>
+          </section>
+          <section class="difficult-choice-box">
+            <h3>Difficult</h3>
+            <p>Rock beats Scissors</p>
+            <p>Paper beats Rock</p>
+            <p>Scissors beat Paper</p>
+            <p>Fire beats Paper<p><br>
+            </p>
+          </section>
         </section>
-      </div>
-      <div>
-        <section class="difficult-choice-box">
-          <h3>Difficult</h3>
-          <p>Rock beats Scissors</p>
-          <p>Paper beats Rock</p>
-          <p>Scissors beat Paper</p>
-          <p>Fire beats Paper<br>
-          </p>
+        <section class="choices-boxes hidden">
+          <div class="player-choice" id="1">
+            <img src="assets/happy-paper.png" alt="laptop" width="100" height="100">
+          </div>
+          <div class="player-choice" id="2">
+            <img src="assets/rock.png" alt="laptop" width="100" height="100">
+          </div>
+          <div class="player-choice" id="3">
+            <img src="assets/happy-scissors.png" alt="laptop" width="100" height="100">
+          </div>
+          <div class="player-choice hidden" id="4">
+            <img src="assets/explosive.png" alt="laptop" width="100" height="100">
+          </div>
         </section>
-      </div>
+      </section>
+      <aside class="side-panels">
+        <div class="players-score-board">
+          <img src="assets/laptop.png" alt="laptop" width="100" height="100">
+          <h4>Computer</h4>
+          <p>Wins: <span class="score" id="computer-score">0<span></p>
+        </div>
+      </aside>
     </section>
-    <section class="choose-player-board">
-      <div class="player-choice" id="1">
-        <img src="assets/happy-paper.png" alt="laptop" width="100" height="100">
-      </div>
-      <div class="player-choice" id="2">
-        <img src="assets/rock.png" alt="laptop" width="100" height="100">
-      </div>
-      <div class="player-choice" id="3">
-        <img src="assets/happy-scissors.png" alt="laptop" width="100" height="100">
-      </div>
-      <div class="player-choice hidden" id="4">
-        <img src="assets/explosive.png" alt="laptop" width="100" height="100">
-      </div>
-      <div class="player-choice hidden" id="5">
-      </div>
-    </section>
-    <aside>
-      <div>
-        <img src="assets/laptop.png" alt="laptop" width="100" height="100">
-        <h4>Computer</h4>
-        <p>Wins: <span class="score" id="computer-score">0<span></p>
-      </div>
-    </aside>
     <script type="text/javascript" src="player.js"></script>
     <script type="text/javascript" src="game.js"></script>
     <script type="text/javascript" src="main.js"></script>
