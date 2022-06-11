@@ -7,12 +7,12 @@
     <title>Rock Paper Scissors</title>
   </head>
   <body>
-    <section class="entire-screen">
+    <main class="entire-screen">
       <aside class="side-panels">
         <div class="players-score-board">
           <img src="assets/avatar.png" alt="female presenting avatar" width="100" height="100">
           <h4>Player</h4>
-          <p>Wins: <span class="score" id="player-score">0<span></p>
+          <p id="person-score">Wins: 0</p>
           <button class="change-game-btn hidden" type="button" name="game-choice-btn" id="gameChoiceButton">Change Game</button>
         </div>
       </aside>
@@ -24,31 +24,33 @@
         <section class="choices-boxes">
           <section class="classic-choice-box">
             <h3>Classic</h3>
-            <p>Rock beats Scissors<br>
-              Paper beats Rock<br>
-              Scissors beats Paper<br>
-            </p>
+            <ul>
+              <li>Rock beats Scissors</li>
+              <li>Paper beats Rock</li>
+              <li>Scissors beats Paper</li>
+            </ul>
           </section>
           <section class="difficult-choice-box">
             <h3>Difficult</h3>
-            <p>Rock beats Scissors</p>
-            <p>Paper beats Rock</p>
-            <p>Scissors beat Paper</p>
-            <p>Fire beats Paper<p><br>
-            </p>
+            <ul>
+              <li>Rock beats Scissors</li>
+              <li>Paper beats Rock</li>
+              <li>Scissors beats Paper</li>
+              <li>Fire beats Paper</li>
+            </ul>
           </section>
         </section>
         <section class="choices-boxes hidden">
-          <div class="player-choice" id="1">
+          <div class="fighter-choice" id="1">
             <img src="assets/happy-paper.png" alt="laptop" width="100" height="100">
           </div>
-          <div class="player-choice" id="2">
+          <div class="fighter-choice" id="2">
             <img src="assets/rock.png" alt="laptop" width="100" height="100">
           </div>
-          <div class="player-choice" id="3">
+          <div class="fighter-choice" id="3">
             <img src="assets/happy-scissors.png" alt="laptop" width="100" height="100">
           </div>
-          <div class="player-choice hidden" id="4">
+          <div class="fighter-choice hidden" id="4">
             <img src="assets/explosive.png" alt="laptop" width="100" height="100">
           </div>
         </section>
@@ -57,12 +59,13 @@
         <div class="players-score-board">
           <img src="assets/laptop.png" alt="laptop" width="100" height="100">
           <h4>Computer</h4>
-          <p>Wins: <span class="score" id="computer-score">0<span></p>
+          <p id="computer-score">Wins: 0</p>
         </div>
       </aside>
     </section>
     <script type="text/javascript" src="player.js"></script>
     <script type="text/javascript" src="game.js"></script>
     <script type="text/javascript" src="main.js"></script>
+  </main>
   </body>
 </html>
