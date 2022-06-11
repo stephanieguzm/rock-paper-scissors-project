@@ -15,13 +15,6 @@ class Player {
   addWin() {
     this.wins ++
   }
-
-//takeTurn catches the player's fighter choice from the DOM
-// and generates a random character choice for the computer
-// it returns both fighters stored within the player class
-// and adds them to this.fighter
-
-  }
 }
 
 

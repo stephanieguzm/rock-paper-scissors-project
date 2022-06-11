@@ -1,31 +1,38 @@
 class Game {
-  constructor(gameType) {
-    this.gameType = "classic";
+  constructor(gameType, personFighter) {
+    this.gameType = gameType;
     this.fighters = ["rock", "paper", "scissors"];
     this.person = new Player("person", "👩🏽‍💼");
-    this.computer = new Player("computer", "💻")
+    this.computer = new Player("computer", "💻");
     this.personFighter = personFighter;
-    this.computerFighter = takeTurn(fighters);
-    this.winner = "";
+    this.computerFighter = player.takeTurn(this.fighters);
+    this.winner;
     }
 
-  chooseGameType(gameType) {
+  chooseFighter() {
     if (this.gameType === "classic") {
-      this.fighters
+      return this.fighters
     } else {
+      this.gameType === "difficult"
       this.fighters.push("fire")
+      return this.fighters
     }
   }
 
+  //pull in .game.gameType from main.js (catch w/ event listener)
   playClassicGame() {
-    
+    chooseFighter();
+    this.computerFighter = player.takeTurn(this.fighters)
+
   }
 
+  //pull in .game.gameType from main.js (catch w/ event listener)
   playDifficultGame() {
+    chooseFighter();
+    this.computerFighter = player.takeTurn(this.fighters)
 
   }
-// checks game board for win or draw conditions
-// adds wins to correct player class and tracks winner
+
   determineWinner() {
     if (personFighter === computerFighter) {
       return `It's a draw!`;
@@ -41,7 +48,7 @@ class Game {
       this.winner = this.computer
       this.computer.addWin();
       return `You lose!`
-    } if (personFighter === "paper" && (computerFighter === "rock") {
+    } if (personFighter === "paper" && computerFighter === "rock") {
       this.winner = this.person
       this.person.addWin();
       return `You win!`
@@ -62,9 +69,10 @@ class Game {
       this.computer.addWin();
       return `You lose!`
     }
+  }
 
-  resetGame() {
-    //choose fighter view - with gameType parameter
-}
+//   resetGame() {
+//     //choose fighter view - with gameType parameter
+// }
 
 }
