@@ -1,54 +1,70 @@
-var person = new Player("person", "👩🏽‍💼");
-var computer = new Player("computer", "💻")
-
 class Game {
-  constructor() {
-    this.gameType = "difficult" || "classic";
-    this.choices = ["rock", "paper", "scissors"];
-    this.winner;
+  constructor(gameType) {
+    this.gameType = "classic";
+    this.fighters = ["rock", "paper", "scissors"];
+    this.person = new Player("person", "👩🏽‍💼");
+    this.computer = new Player("computer", "💻")
+    this.personFighter = personFighter;
+    this.computerFighter = takeTurn(fighters);
+    this.winner = "";
     }
 
-//checks game board for win or draw conditions
+  chooseGameType(gameType) {
+    if (this.gameType === "classic") {
+      this.fighters
+    } else {
+      this.fighters.push("fire")
+    }
+  }
+
+  playClassicGame() {
+    
+  }
+
+  playDifficultGame() {
+
+  }
+// checks game board for win or draw conditions
+// adds wins to correct player class and tracks winner
   determineWinner() {
-    if (person.choice === computer.choice) {
+    if (personFighter === computerFighter) {
       return `It's a draw!`;
-  } if (person.choice === "rock" && (computer.choice === "scissors" || computerChoice === "fire")) {
-      person.wins ++
-      this.winner = person
+    } if (personFighter === "rock" && (computerFighter === "scissors" || computerFighter === "fire")) {
+      this.winner = this.person;
+      this.person.addWin();
       return `You win!`
-    } if (person.choice === "rock" && computer.choice === "paper") {
-      computer.wins ++
-      this.winner = computer
+    } if (personFighter=== "rock" && computerFighter === "paper") {
+      this.winner = this.computer
+      this.computer.addWin();
       return `You lose!`
-    } if (person.choice === "paper" && computer.choice === "scissors" || computer.choice == "fire") {
-      computer.wins ++
-      this.winner = computer
+    } if (personFighter === "paper" && (computerFighter === "scissors" || computerFighter == "fire")) {
+      this.winner = this.computer
+      this.computer.addWin();
       return `You lose!`
-    } if (person.choice === "paper" && (computer.choice === "rock") {
-      person.wins ++
-      this.winner = person
+    } if (personFighter === "paper" && (computerFighter === "rock") {
+      this.winner = this.person
+      this.person.addWin();
       return `You win!`
-    } if (person.choice === "scissors" && computer.choice === "rock" || computer.choice === "fire") {
-      computer.wins ++
-      this.winner = computer
+    } if (personFighter === "scissors" && (computerFighter === "rock" || computerFighter === "fire")) {
+      this.winner = this.computer
+      this.computer.addWin();
       return `You lose!`
-    } if (person.choice === "scissors" && computer.choice === "paper") {
-      person.wins ++
-      this.winner = person
+    } if (personFighter === "scissors" && computerFighter === "paper") {
+      this.winner = this.person
+      this.person.addWin();
       return `You win!`
-    } if (person.choice === "fire" && (computer.choice === "paper" || computer.choice === "scissors")) {
-      person.wins ++
-      this.winner = person
+    } if (personFighter=== "fire" && (computerFighter === "paper" || computerFighter === "scissors")) {
+      this.winner = this.person
+      this.person.addWin();
       return `You win!`
-    } if (person.choice === "fire" && (computer.choice === "rock")) {
-      computer.wins ++
-      this.winner = computer
+    } if (personFighter === "fire" && (computerFighter === "rock")) {
+      this.winner = this.computer
+      this.computer.addWin();
       return `You lose!`
     }
 
-  //resetGame() {
-  // reset game board to start new game
-  //
-// }
+  resetGame() {
+    //choose fighter view - with gameType parameter
+}
 
 }
