@@ -3,13 +3,7 @@ class Player {
     this.player = player;
     this.token = token;
     this.wins = 0;
-  }
-
-  takeTurn(fighters) {
-    if (this.player === game.computer) {
-      var computerFighter = Math.floor(Math.random() * fighters.length);
-      return computerFighter;
-    }
+    this.fighter;
   }
 
   addWin() {
