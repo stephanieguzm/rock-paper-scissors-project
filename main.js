@@ -2,25 +2,26 @@ var game = new Game();
 //query selectors
 var chooseClassicGame = document.querySelector(".classic-choice-box");
 var chooseDifficultGame = document.querySelector(".difficult-choice-box");
-var classicPaperFighter = document.getElementById("c0");
-var classicRockFighter = document.getElementById("c1");
-var classicScissorsFighter = document.getElementById("c2");
-var difficultPaperFighter = document.getElementById("d0");
-var difficultRockFighter = document.getElementById("d1");
-var difficultScissorsFighter = document.getElementById("d2");
-var difficultfireFighter = document.getElementById("d3");
+var classicPaperFighter = document.getElementById("paper");
+var classicRockFighter = document.getElementById("rock");
+var classicScissorsFighter = document.getElementById("scissors");
+var difficultPaperFighter = document.getElementById("paper");
+var difficultRockFighter = document.getElementById("rock");
+var difficultScissorsFighter = document.getElementById("scissors");
+var difficultFireFighter = document.getElementById("fire");
 var changeGameButton = document.getElementsByClassName("change-game-btn");
 var gameTypes = document.querySelector(".game-types");
-var classicFighters = document.querySelector(".c-fighters");
-var classicFightersArray = document.querySelectorAll(".c-fighters .c-fighter")
+var classicFightersContainer = document.querySelector(".c-fighters");
 var difficultFighters = document.querySelector(".d-fighters");
 var subheader = document.querySelector(".subheader")
+var personScore = document.querySelector("#personScore")
+var computerScore = document.querySelector("#computerScore")
 
 // event listeners
-chooseClassicGame.addEventListener("click", showClassicGameBoard);
-
-for (var i = 0; i < classicFightersArray.length; i++) {
-  classicFightersArray[i].addEventListener("click", selectPersonFighter) }
+chooseClassicGame.addEventListener("click", showClassicGame);
+classicFightersContainer.addEventListener('click', function(event){
+  selectClassicFighter(event)
+});
 
 // chooseDifficultGame.addEventListener("click", showDifficultGameBoard);
 // paperFighter.addEventListener("click", functionName);
@@ -39,44 +40,38 @@ function hide(element) {
 };
 
 // show classic gameboard
-function showClassicGameBoard() {
+function showClassicGame() {
+  game.gameType = "classic"
   hide(gameTypes)
-  show(classicFighters);
+  show(classicFightersContainer);
   subheader.innerText = `Choose Your Fighter!`
+  selectClassicFighter();
+  playClassicGame();
 };
 
-// person selects a fighter
-function selectPersonFighter(event) {
-  for (var i = 0; i < classicFightersArray.length; i++) {
-    if (event.target.id === classicFightersArray[i]) {
-      var personFighter = event.target.id
+function playClassicGame() {
+  // determineWinner();
+  setTimeout(4000)
+}
+
+function selectClassicFighter(event) {
+  var personFighter = event.target.id;
+    if (event.target.id) {
+      game.person.fighter = personFighter;
+      return personFighter
   }
-    var
-  }
-// 
-//   if (game.gameType === 'classicFighters') {
-//     for (var i = 0; i < game.classicFighters.length; i++) {
-//       if (game.difficultFighters[i].id == event.target.id) {
-//         return;
-//       }
-//     }
-//   } else if (game.gameType === 'difficult') {
-//     for (var i = 0; i < game.difficultFighters.length; i++) {
-//       if (game.classicFighters[i].id == event.target.id) {
-//         return;
-//       }
+  game.randomizeComputerFighter();
+
+}
+
+// function selectDifficultFighter(event) {
+//   var personFighter = parseInt(event.target.id);
+//   for (var i = 0; i < game.difficultFighters.length; i++) {
+//     if (personFighter === game.difficultFighters[i]) {
+//       personFighter = game.person.fighter;
 //     }
 //   }
 // }
-
-
-// keep within Game class and push result to computer.fighter (for computer)
-function takeTurn(fighters) {
-  var computerFighter = Math.floor(Math.random() * fighters.length)
-  this.fighter = computerFighter;
-}
-
-// pull in .game.gameType from main.js (catch w/ event listener)
 
 // if the user clicks on the classic game, then the user will be displayed
 // a list of characters associated with that changeGameType
@@ -92,9 +87,9 @@ function takeTurn(fighters) {
 // a list of characters associated with that changeGameType
 // the user will then be able to select the character of their choice
 //pull in .game.gameType from main.js (catch w/ event listener)
-function chooseDifficultGame(event) {
-
-}
+// function chooseDifficultGame(event) {
+//
+// }
 
 // function goToHomePage() {
 //
