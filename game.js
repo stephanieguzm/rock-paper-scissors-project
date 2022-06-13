@@ -10,7 +10,7 @@ class Game {
 
   determineWinner() {
     if (this.person.fighter === this.computer.fighter) {
-      subheader.innerText = `It's a draw`;
+      subheader.innerText = `It's a draw!`;
     } else if (
       this.person.fighter === "rock" && (this.computer.fighter === "scissors" || this.computer.fighter === "fire")
       || this.person.fighter=== "fire" && (this.computer.fighter === "paper" || this.computer.fighter === "scissors")
@@ -19,18 +19,18 @@ class Game {
         this.winner = this.person;
         this.person.addWin();
         subheader.innerText = `You win!`
-        personScore.innerText = `Wins: ${person.wins}`
+        personScore.innerText = `Wins: ${this.person.wins}`
       } else {
         this.winner = this.computer
         this.computer.addWin();
         subheader.innerText = `You lose!`
-        computerScore.innerText = `Wins: ${computer.wins}`
+        computerScore.innerText = `Wins: ${this.computer.wins}`
       }
     }
 
-    //   resetGameBoard() {
-      //     //choose fighter view - with gameType parameter
-      // }
+    changeGameType() {
+      game.gameType = "";
+    }
 
   // determineWinner() {
   //   if (this.person.fighter === this.computer.fighter) {
