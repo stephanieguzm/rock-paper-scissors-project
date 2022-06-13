@@ -28,9 +28,10 @@ class Game {
       }
     }
 
-    changeGameType() {
-      game.gameType = "";
-    }
+  changeGameType() {
+    game.gameType = "";
+  }
+}
 
   // determineWinner() {
   //   if (this.person.fighter === this.computer.fighter) {

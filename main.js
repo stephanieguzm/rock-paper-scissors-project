@@ -3,7 +3,7 @@ var game = new Game();
 var chooseClassicGame = document.querySelector(".classic-choice-box");
 var chooseDifficultGame = document.querySelector(".difficult-choice-box");
 var chosenFightersContainer = document.querySelector(".chosen-fighters-container");
-var changeGameButton = document.getElementsByClassName("change-game-btn");
+var changeGameButton = document.querySelector(".change-game-btn");
 var gameTypes = document.querySelector(".game-types");
 var classicFightersContainer = document.querySelector(".c-fighters");
 var difficultFightersContainer = document.querySelector(".d-fighters");
@@ -20,13 +20,7 @@ chooseDifficultGame.addEventListener("click", showDifficultGame)
 difficultFightersContainer.addEventListener("click", function(event) {
   selectDifficultFighter(event)
 });
-
-// chooseDifficultGame.addEventListener("click", showDifficultGameBoard);
-// paperFighter.addEventListener("click", functionName);
-// rockfighter.addEventListener(("click", functionName));
-// scissorsFighter.addEventListener("click", functionName);
-// fireFighter.addEventListener("click", functionName);
-// changeGameButton.addEventListener("click", functionName);
+changeGameButton.addEventListener("click", changeGame)
 
 //helper functions
 function show(element) {
@@ -55,16 +49,6 @@ function selectClassicFighter(event) {
     return personFighter
   }
 };
-
-// function playClassicGame() {
-//   game.determineWinner();
-//   setTimeout(4000)
-// };
-//
-// function playDifficultGame() {
-//   game.determineWinner();
-//   setTimeout(4000)
-// };
 
 function showDifficultGame() {
   game.gameType = "difficult"
@@ -102,6 +86,7 @@ function showFighters() {
   hide(classicFightersContainer);
   hide(difficultFightersContainer);
   show(chosenFightersContainer);
+  show(changeGameButton);
   chosenFightersContainer.innerHTML = `
   <section class="fighters">
     <img src="assets/${game.person.fighter}.png" alt="laptop" width="100" height="100">
@@ -109,17 +94,30 @@ function showFighters() {
   </section>`
   game.determineWinner();
   console.log("Hello!");
-  // setTimeout(resetGameBoard, 4000);
+  setTimeout(resetGameBoard, 1000);
 }
 
 function resetGameBoard() {
-  // setTimeout(4000);
-  hide(showFighters);
+  show(changeGameButton);
+  hide(gameTypes);
+  hide(chosenFightersContainer);
   if (game.gameType === "classic") {
+    hide(difficultFightersContainer)
     showClassicGame()
   } else if (game.gameType === "difficult") {
+    hide(difficultFightersContainer)
     showDifficultGame()
   }
+}
+
+function changeGame() {
+  clearTimeout(setTimeout(resetGameBoard, 1000));
+  show(changeGameButton);
+  show(gameTypes);
+  hide(chosenFightersContainer);
+  hide(classicFightersContainer);
+  hide(difficultFightersContainer);
+  subheader.innerText = `Choose Your Game!`
 }
 
 
