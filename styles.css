@@ -26,7 +26,7 @@
   width: 20vw;
 }
 
-.choices-boxes {
+.game-types, .c-fighters, .d-fighters, .chosen-fighters-container {
   display: flex;
   justify-content: space-evenly;
   flex-direction: row;
