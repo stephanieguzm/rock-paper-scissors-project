@@ -12,16 +12,16 @@
         <div class="players-score-board">
           <img src="assets/avatar.png" alt="female presenting avatar" width="100" height="100">
           <h4>Player</h4>
-          <p id="person-score">Wins: 0</p>
+          <p id="personScore">Wins: 0</p>
           <button class="change-game-btn hidden" type="button" name="game-choice-btn" id="gameChoiceButton">Change Game</button>
         </div>
       </aside>
       <section class="main-section">
         <header>
           <h1>Rock, Paper, Scissors</h1>
-          <h2 class="subheader">Choose your game!</h2>
+          <h2 class="subheader">Choose Your Game!</h2>
         </header>
-        <section class="choices-boxes">
+        <section class="game-types">
           <section class="classic-choice-box">
             <h3>Classic</h3>
             <ul>
@@ -40,26 +40,41 @@
             </ul>
           </section>
         </section>
-        <section class="choices-boxes hidden">
-          <div class="fighter-choice" id="1">
-            <img src="assets/happy-paper.png" alt="laptop" width="100" height="100">
+        <section class="c-fighters hidden">
+          <div class="c-fighter">
+            <img src="assets/paper.png" alt="paper" width="100" height="100" id="paper">
           </div>
-          <div class="fighter-choice" id="2">
-            <img src="assets/rock.png" alt="laptop" width="100" height="100">
+          <div class="c-fighter">
+            <img src="assets/rock.png" alt="rock" width="100" height="100" id="rock">
           </div>
-          <div class="fighter-choice" id="3">
-            <img src="assets/happy-scissors.png" alt="laptop" width="100" height="100">
+          <div class="c-fighter">
+            <img src="assets/scissors.png" alt="scissors" width="100" height="100" id="scissors">
           </div>
-          <div class="fighter-choice hidden" id="4">
-            <img src="assets/explosive.png" alt="laptop" width="100" height="100">
+        </section>
+        <section class="d-fighters hidden">
+          <div class="d-fighter">
+            <img src="assets/paper.png" alt="paper" width="100" height="100" id="paper">
           </div>
+          <div class="d-fighter">
+            <img src="assets/rock.png" alt="rock" width="100" height="100" id="rock">
+          </div>
+          <div class="d-fighter">
+            <img src="assets/scissors.png" alt="scissors" width="100" height="100" id="scissors">
+          </div>
+          <div class="d-fighter">
+            <img src="assets/fire.png" alt="fire" width="100" height="100" id="fire">
+          </div>
+        </section>
+        <section class="chosen-fighters-container hidden">
+          <section class="fighters">
+          </section>
         </section>
       </section>
       <aside class="side-panels">
         <div class="players-score-board">
           <img src="assets/laptop.png" alt="laptop" width="100" height="100">
           <h4>Computer</h4>
-          <p id="computer-score">Wins: 0</p>
+          <p id="computerScore">Wins: 0</p>
         </div>
       </aside>
     </section>
