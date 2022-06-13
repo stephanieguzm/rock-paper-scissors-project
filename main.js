@@ -110,7 +110,7 @@ function resetGameBoard() {
 };
 
 function changeGame() {
-  // game.gameType = "";
+  game.gameType = "";
   clearTimeout(setTimeout(resetGameBoard, 1000));
   show(changeGameButton);
   show(gameTypes);

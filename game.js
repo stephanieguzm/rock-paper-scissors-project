@@ -23,7 +23,7 @@ class Game {
       } else {
         this.winner = this.computer
         this.computer.addWin();
-        subheader.innerText = `You lose!`
+        subheader.innerText = `Computer wins!`
         computerScore.innerText = `Wins: ${this.computer.wins}`
       }
     }
