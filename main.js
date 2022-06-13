@@ -95,22 +95,22 @@ function showFighters() {
   game.determineWinner();
   console.log("Hello!");
   setTimeout(resetGameBoard, 1000);
-}
+};
 
 function resetGameBoard() {
-  show(changeGameButton);
   hide(gameTypes);
   hide(chosenFightersContainer);
   if (game.gameType === "classic") {
     hide(difficultFightersContainer)
     showClassicGame()
   } else if (game.gameType === "difficult") {
-    hide(difficultFightersContainer)
+    hide(classicFightersContainer)
     showDifficultGame()
   }
-}
+};
 
 function changeGame() {
+  // game.gameType = "";
   clearTimeout(setTimeout(resetGameBoard, 1000));
   show(changeGameButton);
   show(gameTypes);
@@ -118,7 +118,7 @@ function changeGame() {
   hide(classicFightersContainer);
   hide(difficultFightersContainer);
   subheader.innerText = `Choose Your Game!`
-}
+};
 
 
 // if the user clicks on the classic game, then the user will be displayed

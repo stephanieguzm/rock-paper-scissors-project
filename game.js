@@ -27,10 +27,6 @@ class Game {
         computerScore.innerText = `Wins: ${this.computer.wins}`
       }
     }
-
-  changeGameType() {
-    game.gameType = "";
-  }
 }
 
   // determineWinner() {
@@ -70,7 +66,3 @@ class Game {
   //     subheader.innerText = `You lose!`
   //   }
   // }
-
-
-
-}
