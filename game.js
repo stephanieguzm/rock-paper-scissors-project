@@ -8,12 +8,6 @@ class Game {
     this.winner;
     }
 
-  randomizeComputerFighter() {
-    if (this.gameType === "classic")
-    var computerFighter = Math.floor(Math.random() * this.classicFighters.length)
-    computerFighter = this.computer.fighter;
-  }
-
   determineWinner() {
     if (this.person.fighter === this.computer.fighter) {
       subheader.innerText = `It's a draw`;

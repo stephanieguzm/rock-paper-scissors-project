@@ -39,49 +39,48 @@ function hide(element) {
   element.classList.add("hidden");
 };
 
-// show classic gameboard
+// triggered by event listener
 function showClassicGame() {
   game.gameType = "classic"
   hide(gameTypes)
   show(classicFightersContainer);
   subheader.innerText = `Choose Your Fighter!`
-  selectClassicFighter();
   playClassicGame();
 };
 
 function playClassicGame() {
   // determineWinner();
-  setTimeout(4000)
+  // setTimeout(4000)
 }
 
+// triggered by event listener
 function selectClassicFighter(event) {
   var personFighter = event.target.id;
     if (event.target.id) {
       game.person.fighter = personFighter;
+      console.log(game.person.fighter)
+      randomizeComputerFighter();
       return personFighter
   }
-  game.randomizeComputerFighter();
-
 }
 
-// function selectDifficultFighter(event) {
-//   var personFighter = parseInt(event.target.id);
-//   for (var i = 0; i < game.difficultFighters.length; i++) {
-//     if (personFighter === game.difficultFighters[i]) {
-//       personFighter = game.person.fighter;
-//     }
-//   }
-// }
+function randomizeComputerFighter() {
+  if (game.gameType === "classic") {
+    game.computer.fighter = game.classicFighters[Math.floor(Math.random() * game.classicFighters.length)];
+    console.log(game.computer.fighter);
+    return game.computer.fighter
+  } else if (game.gameType === "difficult") {
+    game.computer.fighter = game.difficultFighters[Math.floor(Math.random() * game.difficultFighters.length)];
+    console.log(game.computer.fighter);
+    return game.computer.fighter
+  }
+}
+
 
 // if the user clicks on the classic game, then the user will be displayed
 // a list of characters associated with that changeGameType
 // the user will then be able to select the character of their choice
-// function chooseClassicGame(event) {
-//   var classicGameChosen = event.target.id
-//   if (classicGameChosen === chooseClassicGame) {
-//     show("fighter-types");
-//   }
-// }
+
 
 // if the user clicks on the difficult game, then the user will be displayed
 // a list of characters associated with that changeGameType
