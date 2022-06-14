@@ -2,7 +2,7 @@ class Game {
   constructor() {
     this.gameType;
     this.classicFighters = ["paper", "rock", "scissors"];
-    this.difficultFighters = ["paper", "rock", "scissors", "fire"];
+    this.mythicalFighters = ["dragon", "wizard", "werewolf", "unicorn", "mermaid"];
     this.person = new Player("person", "👩🏽‍💼");
     this.computer = new Player("computer", "💻");
     this.winner;
@@ -12,10 +12,19 @@ class Game {
     if (this.person.fighter === this.computer.fighter) {
       subheader.innerText = `It's a draw!`;
     } else if (
-      this.person.fighter === "rock" && (this.computer.fighter === "scissors" || this.computer.fighter === "fire")
-      || this.person.fighter=== "fire" && (this.computer.fighter === "paper" || this.computer.fighter === "scissors")
+      this.person.fighter === "rock" && this.computer.fighter === "scissors"
       || this.person.fighter === "scissors" && this.computer.fighter === "paper"
-      || this.person.fighter === "paper" && this.computer.fighter === "rock") {
+      || this.person.fighter === "paper" && this.computer.fighter === "rock"
+      || this.person.fighter === "dragon" &&
+        (this.computer.fighter === "werewolf" || this.computer.fighter === "unicorn")
+      || this.person.fighter === "wizard" &&
+        (this.computer.fighter === "dragon" || this.computer.fighter === "mermaid")
+      || this.person.fighter === "werewolf" &&
+        (this.computer.fighter === "wizard" || this.computer.fighter === "unicorn")
+      || this.person.fighter === "unicorn" &&
+        (this.computer.fighter === "wizard" || this.computer.fighter === "mermaid")
+      || this.person.fighter === "mermaid" &&
+        (this.computer.fighter === "werewolf" || this.computer.fighter === "dragon")) {
         this.winner = this.person;
         this.person.addWin();
         subheader.innerText = `You win!`
@@ -27,42 +36,4 @@ class Game {
         computerScore.innerText = `Wins: ${this.computer.wins}`
       }
     }
-}
-
-  // determineWinner() {
-  //   if (this.person.fighter === this.computer.fighter) {
-  //     subheader.innerText = `It's a draw`;
-  //   } if (this.person.fighter === "rock" && (this.computer.fighter === "scissors" || this.computer.fighter === "fire")) {
-  //     this.winner = this.person;
-  //     this.person.addWin();
-  //     subheader.innerText = `You win!`
-  //   } if (this.person.fighter=== "rock" && this.computer.fighter === "paper") {
-  //     this.winner = this.computer
-  //     this.computer.addWin();
-  //     subheader.innerText = `You lose!`
-  //   } if (this.person.fighter === "paper" && (this.computer.fighter === "scissors" || this.computer.fighter == "fire")) {
-  //     this.winner = this.computer
-  //     this.computer.addWin();
-  //     subheader.innerText = `You lose!`
-  //   } if (this.person.fighter === "paper" && this.computer.fighter === "rock") {
-  //     this.winner = this.person
-  //     this.person.addWin();
-  //     subheader.innerText = `You win!`
-  //   } if (this.person.fighter === "scissors" && (this.computer.fighter === "rock" || this.computer.fighter === "fire")) {
-  //     this.winner = this.computer
-  //     this.computer.addWin();
-  //     subheader.innerText = `You lose!`
-  //   } if (this.person.fighter === "scissors" && this.computer.fighter === "paper") {
-  //     this.winner = this.person
-  //     this.person.addWin();
-  //     subheader.innerText = `You win!`
-  //   } if (this.person.fighter=== "fire" && (this.computer.fighter === "paper" || this.computer.fighter === "scissors")) {
-  //     this.winner = this.person
-  //     this.person.addWin();
-  //     subheader.innerText = `You win!`
-  //   } if (this.person.fighter === "fire" && (this.computer.fighter === "rock")) {
-  //     this.winner = this.computer
-  //     this.computer.addWin();
-  //     subheader.innerText = `You lose!`
-  //   }
-  // }
+};

@@ -1,67 +1,14 @@
-* {
-  border: 1px solid red;
-}
-
 body {
-  background-color: black;
+  background-color: #D81159;
+  height: 100vh;
+  width: 100vw;
 }
 
-.entire-screen {
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  align-items: stretch;
-  height: 97vh;
-  font-family: 'Press Start 2P', cursive;
-  text-align: center;
-  background-color: red;
-  width: 98vw;
-}
-
-.main-section {
-  display: flex;
-  flex-direction: column;
-  width: 60vw;
-  height: 100%;
-  align-items: center;
-  /* border-left: 3px solid black;
-  border-right: 3px solid black; */
-  background-color: white;
-}
-
-.players-score-board {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  text-align: center;
-  width: 20vw;
-  border: 5px;
-  border-color: green;
-  border-radius: 5px;
-}
-
-.game-types, .c-fighters, .d-fighters, .chosen-fighters-container {
-  display: flex;
-  justify-content: space-evenly;
-  flex-direction: row;
-  align-items: center;
-  width: 60vw;
-  margin-top: 40px;
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
-
-.classic-choice-box:hover, .difficult-choice-box:hover {
-  background-color: #4CAF50;
-  color: white;
-  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-  cursor: pointer;
-  padding: 10px;
-}
-
-.hidden{
-  display: none!important;
+header {
+  background-color: #D81159;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 100%;
 }
 
 h1 {
@@ -75,37 +22,26 @@ h2 {
   padding-bottom: 20px;
 }
 
-h4 {
+h3, h4 {
   font-size: 1.25em;
 }
 
 button {
-  transition-duration: .3s;
-  margin-top: 30px;
-  padding: 10px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  box-shadow: 2px 2px gray;
-  font-family: 'Press Start 2P', cursive;
   border-color: black;
+  box-shadow: 3px 3px 2px #808080a1;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1em;
+  margin-top: 30px;
+  margin-right: 8px;
+  padding: 15px;
+  transition-duration: .3s;
 }
 
 button:hover {
   background-color: black;
-  color: white;
   box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  color: white;
   cursor: pointer;
-}
-
-header {
-  background-color: red;
-  width: 100%;
-  border-bottom: 3px solid black;
-}
-
-.side-panels {
-  width: 100%;
-  background-color: red;
 }
 
 ul {
@@ -115,4 +51,84 @@ ul {
 
 img {
   cursor: pointer;
+}
+
+.entire-screen {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  background-color: #D81159;
+  font-family: 'Press Start 2P', cursive;
+  height:100vh;
+  width: 100vw;
+  text-align: center;
+}
+
+.main-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 60vw;
+  background-color: white;
+}
+
+.players-score-board {
+  margin-top: 100px;
+  margin-bottom: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  width: 20vw;
+}
+
+.game-types {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  line-height: 1.2;
+  margin-top: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 60vw;
+}
+
+.classic-choice-box,
+.mythical-choice-box {
+  background-color: white;
+  color: black;
+  padding: 20px;
+  margin-bottom: 30px;
+}
+
+.classic-choice-box:hover,
+.mythical-choice-box:hover {
+  background-color: #4CAF50;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 15px 0 rgba(0,0,0,0.19);
+  color: white;
+  cursor: pointer;
+}
+.c-fighters,
+.d-fighters,
+.chosen-fighters-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: white;
+  margin-top: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  width: 60vw;
+}
+
+.hidden {
+  display: none!important;
+}
+
+.side-panels {
+  background-color: #D81159;
+  height: 100vh;
 }
