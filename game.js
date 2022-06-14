@@ -3,8 +3,8 @@ class Game {
     this.gameType;
     this.classicFighters = ["paper", "rock", "scissors"];
     this.mythicalFighters = ["dragon", "wizard", "werewolf", "unicorn", "mermaid"];
-    this.person = new Player("person", "👩🏽‍💼");
-    this.computer = new Player("computer", "💻");
+    this.person = new Player("person");
+    this.computer = new Player("computer");
     this.winner;
     }
 
