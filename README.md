@@ -42,4 +42,7 @@ CSS
 ##Reflections
 Overall, I am proud of the progress I have made over the last 6 weeks which I was able to demonstrate through building this app. I took time to plan out the functionality of the app and had fun designing its look. My biggest challenge throughout was separating the Data Model and the DOM when building my app. One of my goals for future learning is to continue solidifying my understanding of each, how they work together, and how to best separate them when writing code.
 
-##Game Views
+##Game Walk-through
+https://user-images.githubusercontent.com/101955307/173699505-82b5311e-160e-414b-a147-143e42b43d13.mov
+
+[Link to Walkthrough Video](https://user-images.githubusercontent.com/101955307/173699505-82b5311e-160e-414b-a147-143e42b43d13.mov)
