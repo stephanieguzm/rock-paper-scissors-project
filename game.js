@@ -3,8 +3,8 @@ class Game {
     this.gameType;
     this.classicFighters = ["paper", "rock", "scissors"];
     this.mythicalFighters = ["dragon", "wizard", "werewolf", "unicorn", "mermaid"];
-    this.person = new Player("person", "👩🏽‍💼");
-    this.computer = new Player("computer", "💻");
+    this.person = new Player("person");
+    this.computer = new Player("computer");
     this.winner;
     }
 
@@ -36,4 +36,16 @@ class Game {
         computerScore.innerText = `Wins: ${this.computer.wins}`
       }
     }
+
+  randomizeComputerFighter() {
+    if (this.gameType === "classic") {
+      this.computer.fighter = this.classicFighters[Math.floor(Math.random()
+        * this.classicFighters.length)];
+      return this.computer.fighter
+    } else if (this.gameType === "mythical") {
+      this.computer.fighter = this.mythicalFighters[Math.floor(Math.random()
+        * this.mythicalFighters.length)];
+      return this.computer.fighter
+    }
+  }
 };

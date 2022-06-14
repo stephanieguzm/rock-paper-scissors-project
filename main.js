@@ -7,17 +7,17 @@ var changeGameButton = document.querySelector(".change-game-btn");
 var gameTypes = document.querySelector(".game-types");
 var classicFightersContainer = document.querySelector(".c-fighters");
 var mythicalFightersContainer = document.querySelector(".d-fighters");
-var subheader = document.querySelector(".subheader")
-var personScore = document.querySelector("#personScore")
-var computerScore = document.querySelector("#computerScore")
+var subheader = document.querySelector(".subheader");
+var personScore = document.querySelector("#personScore");
+var computerScore = document.querySelector("#computerScore");
 
 chooseClassicGame.addEventListener("click", showClassicGame);
 classicFightersContainer.addEventListener("click", function(event) {
-  selectClassicFighter(event)
+  selectFighter(event)
 });
-chooseMythicalGame.addEventListener("click", showMythicalGame)
+chooseMythicalGame.addEventListener("click", showMythicalGame);
 mythicalFightersContainer.addEventListener("click", function(event) {
-  selectMythicalFighter(event)
+  selectFighter(event)
 });
 changeGameButton.addEventListener("click", changeGame)
 
@@ -29,53 +29,30 @@ function hide(element) {
   element.classList.add("hidden");
 };
 
-function showClassicGame() {
-  game.gameType = "classic"
-  hide(gameTypes)
-  show(classicFightersContainer);
+function showGameBoard() {
+  hide(gameTypes);
   subheader.innerText = `Choose your fighter!`
 };
 
-function selectClassicFighter(event) {
-  var personFighter = event.target.id;
-  if (event.target.id) {
-    game.person.fighter = personFighter;
-    console.log(game.person.fighter)
-    randomizeComputerFighter();
-    showWinner();
-    return personFighter
-  }
+function showClassicGame() {
+  game.gameType = "classic";
+  show(classicFightersContainer);
+  showGameBoard();
 };
 
 function showMythicalGame() {
-  game.gameType = "mythical"
-  hide(gameTypes)
+  game.gameType = "mythical";
   show(mythicalFightersContainer);
-  subheader.innerText = `Choose Your Fighter!`
+  showGameBoard();
 };
 
-function selectMythicalFighter(event) {
+function selectFighter(event) {
   var personFighter = event.target.id;
-    if (event.target.id) {
-      game.person.fighter = personFighter;
-      console.log(game.person.fighter)
-      randomizeComputerFighter();
-      showWinner();
-      return personFighter
-  }
-};
-
-function randomizeComputerFighter() {
-  if (game.gameType === "classic") {
-    game.computer.fighter = game.classicFighters[Math.floor(Math.random()
-      * game.classicFighters.length)];
-    console.log(game.computer.fighter);
-    return game.computer.fighter
-  } else if (game.gameType === "mythical") {
-    game.computer.fighter = game.mythicalFighters[Math.floor(Math.random()
-      * game.mythicalFighters.length)];
-    console.log(game.computer.fighter);
-    return game.computer.fighter
+  if (event.target.id) {
+    game.person.fighter = personFighter;
+    game.randomizeComputerFighter();
+    showWinner();
+    return personFighter
   }
 };
 
@@ -93,7 +70,6 @@ function showWinner() {
       alt="${game.computer.fighter}" width="200" height="200">
   </section>`
   game.determineWinner();
-  console.log("Hello!");
   setTimeout(resetGameBoard, 1000);
 };
 
@@ -102,10 +78,10 @@ function resetGameBoard() {
   hide(chosenFightersContainer);
   if (game.gameType === "classic") {
     hide(mythicalFightersContainer)
-    showClassicGame()
+    showClassicGame();
   } else if (game.gameType === "mythical") {
     hide(classicFightersContainer)
-    showMythicalGame()
+    showMythicalGame();
   }
 };
 
