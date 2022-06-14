@@ -7,15 +7,15 @@ var changeGameButton = document.querySelector(".change-game-btn");
 var gameTypes = document.querySelector(".game-types");
 var classicFightersContainer = document.querySelector(".c-fighters");
 var mythicalFightersContainer = document.querySelector(".d-fighters");
-var subheader = document.querySelector(".subheader")
-var personScore = document.querySelector("#personScore")
-var computerScore = document.querySelector("#computerScore")
+var subheader = document.querySelector(".subheader");
+var personScore = document.querySelector("#personScore");
+var computerScore = document.querySelector("#computerScore");
 
 chooseClassicGame.addEventListener("click", showClassicGame);
 classicFightersContainer.addEventListener("click", function(event) {
   selectFighter(event)
 });
-chooseMythicalGame.addEventListener("click", showMythicalGame)
+chooseMythicalGame.addEventListener("click", showMythicalGame);
 mythicalFightersContainer.addEventListener("click", function(event) {
   selectFighter(event)
 });
@@ -30,18 +30,18 @@ function hide(element) {
 };
 
 function showGameBoard() {
-  hide(gameTypes)
+  hide(gameTypes);
   subheader.innerText = `Choose your fighter!`
 };
 
 function showClassicGame() {
-  game.gameType = "classic"
+  game.gameType = "classic";
   show(classicFightersContainer);
   showGameBoard();
 };
 
 function showMythicalGame() {
-  game.gameType = "mythical"
+  game.gameType = "mythical";
   show(mythicalFightersContainer);
   showGameBoard();
 };
@@ -50,21 +50,9 @@ function selectFighter(event) {
   var personFighter = event.target.id;
   if (event.target.id) {
     game.person.fighter = personFighter;
-    randomizeComputerFighter();
+    game.randomizeComputerFighter();
     showWinner();
     return personFighter
-  }
-};
-
-function randomizeComputerFighter() {
-  if (game.gameType === "classic") {
-    game.computer.fighter = game.classicFighters[Math.floor(Math.random()
-      * game.classicFighters.length)];
-    return game.computer.fighter
-  } else if (game.gameType === "mythical") {
-    game.computer.fighter = game.mythicalFighters[Math.floor(Math.random()
-      * game.mythicalFighters.length)];
-    return game.computer.fighter
   }
 };
 
@@ -90,10 +78,10 @@ function resetGameBoard() {
   hide(chosenFightersContainer);
   if (game.gameType === "classic") {
     hide(mythicalFightersContainer)
-    showClassicGame()
+    showClassicGame();
   } else if (game.gameType === "mythical") {
     hide(classicFightersContainer)
-    showMythicalGame()
+    showMythicalGame();
   }
 };
 
