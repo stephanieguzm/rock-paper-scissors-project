@@ -52,7 +52,6 @@ function showMythicalGame() {
   hide(gameTypes)
   show(mythicalFightersContainer);
   subheader.innerText = `Choose Your Fighter!`
-  // playMythicalGame();
 };
 
 function selectMythicalFighter(event) {
@@ -113,8 +112,8 @@ function resetGameBoard() {
 function changeGame() {
   game.gameType = "";
   clearTimeout(setTimeout(resetGameBoard, 1000));
-  show(changeGameButton);
   show(gameTypes);
+  show(changeGameButton);
   hide(chosenFightersContainer);
   hide(classicFightersContainer);
   hide(mythicalFightersContainer);
