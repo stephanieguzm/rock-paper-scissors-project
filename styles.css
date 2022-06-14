@@ -49,10 +49,6 @@ ul {
   padding: 0;
 }
 
-img {
-  cursor: pointer;
-}
-
 .entire-screen {
   display: flex;
   justify-content: center;
@@ -124,11 +120,15 @@ img {
   width: 60vw;
 }
 
-.hidden {
-  display: none!important;
-}
-
 .side-panels {
   background-color: #98CE00;
   height: 100vh;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.hidden {
+  display: none!important;
 }
