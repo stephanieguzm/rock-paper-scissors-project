@@ -1,22 +1,23 @@
 # Rock, Paper, Scissors
 ### *A Retro Arcade-Inspired Game*
-### Mod 1 Final Solo Project
+## Mod 1 Final Solo Project
 
 ## Project Overview
 For my final Mod 1 solo project, I designed an application that allows a user to play a classic or variation game of Rock, Paper, Scissors against a computer. Designed to take the user back to a simpler time of arcade gaming, the user can choose to play a game with classic characters or mythical creatures.
 
 ## Technologies Used
-Javascript
-HTML
-CSS
+* Javascript
+* HTML
+* CSS
 
 ## Setup Instructions
 * At the top of the repository, click the green Code button
-* Copy the `SSH` option in the pop-up window
+* Copy the `SSH` link in the pop-up window: `git@github.com:stephanieguzm/rock-paper-scissors-project.git`
 * Open your terminal and navigate to the directory you want to save the repository in.
-* On your command line type `git clone` and paste the SSH link: `git@github.com:stephanieguzm/rock-paper-scissors-project.git`
-* On your command line, navigate inside the directory with `cd rock-paper-scissors`
-* Type `open index.innerHTML` to open the game
+* On your command line execute the following commands to open the game:
+  * `git clone git@github.com:stephanieguzm/rock-paper-scissors-project.git`
+  * `cd rock-paper-scissors`
+  * `open index.html`
 * Enjoy the game!
 
 ## How to Play
