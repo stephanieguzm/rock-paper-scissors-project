@@ -1,17 +1,21 @@
 #Rock, Paper, Scissors
 ###*A Retro Arcade-Inspired Game*
+###Mod 1 Final Solo Project
 
 ##Project Overview
+For my final Mod 1 solo project, I designed an application that allows a user to play a classic or variation game of Rock, Paper, Scissors against a computer. Designed to take the user back to a simpler time of arcade gaming, the user can choose to play a game with classic characters or mythical creatures.
 
-
+##Technologies Used
+Javascript
+HTML
+CSS
 
 ##Setup Instructions
 * At the top of the repository, click the green Code button
 * Copy the `SSH` option in the pop-up window
-* Open your terminal by pressing `command` + `spacebar` and type terminal
-* Once in your terminal, navigate to the directory you want to save the repository in.
+* Open your terminal and navigate to the directory you want to save the repository in.
 * On your command line type `git clone` and paste the SSH link: `git@github.com:stephanieguzm/rock-paper-scissors-project.git`
-* On your command line, navigate inside the `rock-paper-scissors` directory
+* On your command line, navigate inside the directory with `cd rock-paper-scissors`
 * Type `open index.innerHTML` to open the game
 * Enjoy the game!
 
@@ -25,21 +29,17 @@
 * The winner's score updates under their side bar
 * In case of a draw, no one scores
 * Play as many games as you want
-* Click the Change Game button to return to the home screen and play a new Classic or Mythical Creatures game
+* Click the Change Game button to return to the home view and play a new Classic or Mythical Creatures game
 * Take a moment to refresh yourself on the rules and enjoy your new game!
 *Your scores will remain on the screen until you refresh or exit the browser*
 
 ##Future Features
+* Allow the game rules to persist while the user is playing the game
+* Reset and clear the score count to 0
 * Allow the user to select from a list of avatars to personalize their gaming experience
 * Build on the arcade theme by designing the page to look more like a classic arcade game screen
 
 ##Reflections
-Wins/Challenges
-
+Overall, I am proud of the progress I have made over the last 6 weeks which I was able to demonstrate through building this app. I took time to plan out the functionality of the app and had fun designing its look. My biggest challenge throughout was separating the Data Model and the DOM when building my app. One of my goals for future learning is to continue solidifying my understanding of each, how they work together, and how to best separate them when writing code.
 
 ##Game Views
-
-
-Overview of project and goals, technologies used, your code architecture, future features, challenges, wins, and any other reflections
-Setup instructions
-Screenshots or video of your functioning app
