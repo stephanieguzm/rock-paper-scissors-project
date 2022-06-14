@@ -2,7 +2,7 @@ class Game {
   constructor() {
     this.gameType;
     this.classicFighters = ["paper", "rock", "scissors"];
-    this.difficultFighters = ["dragon", "wizard", "werewolf", "unicorn", "mermaid"];
+    this.mythicalFighters = ["dragon", "wizard", "werewolf", "unicorn", "mermaid"];
     this.person = new Player("person", "👩🏽‍💼");
     this.computer = new Player("computer", "💻");
     this.winner;

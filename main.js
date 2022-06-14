@@ -1,12 +1,12 @@
 var game = new Game();
 
 var chooseClassicGame = document.querySelector(".classic-choice-box");
-var chooseDifficultGame = document.querySelector(".difficult-choice-box");
+var chooseMythicalGame = document.querySelector(".mythical-choice-box");
 var chosenFightersContainer = document.querySelector(".chosen-fighters-container");
 var changeGameButton = document.querySelector(".change-game-btn");
 var gameTypes = document.querySelector(".game-types");
 var classicFightersContainer = document.querySelector(".c-fighters");
-var difficultFightersContainer = document.querySelector(".d-fighters");
+var mythicalFightersContainer = document.querySelector(".d-fighters");
 var subheader = document.querySelector(".subheader")
 var personScore = document.querySelector("#personScore")
 var computerScore = document.querySelector("#computerScore")
@@ -15,9 +15,9 @@ chooseClassicGame.addEventListener("click", showClassicGame);
 classicFightersContainer.addEventListener("click", function(event) {
   selectClassicFighter(event)
 });
-chooseDifficultGame.addEventListener("click", showDifficultGame)
-difficultFightersContainer.addEventListener("click", function(event) {
-  selectDifficultFighter(event)
+chooseMythicalGame.addEventListener("click", showMythicalGame)
+mythicalFightersContainer.addEventListener("click", function(event) {
+  selectMythicalFighter(event)
 });
 changeGameButton.addEventListener("click", changeGame)
 
@@ -47,15 +47,15 @@ function selectClassicFighter(event) {
   }
 };
 
-function showDifficultGame() {
-  game.gameType = "difficult"
+function showMythicalGame() {
+  game.gameType = "mythical"
   hide(gameTypes)
-  show(difficultFightersContainer);
+  show(mythicalFightersContainer);
   subheader.innerText = `Choose Your Fighter!`
-  // playDifficultGame();
+  // playMythicalGame();
 };
 
-function selectDifficultFighter(event) {
+function selectMythicalFighter(event) {
   var personFighter = event.target.id;
     if (event.target.id) {
       game.person.fighter = personFighter;
@@ -72,9 +72,9 @@ function randomizeComputerFighter() {
       * game.classicFighters.length)];
     console.log(game.computer.fighter);
     return game.computer.fighter
-  } else if (game.gameType === "difficult") {
-    game.computer.fighter = game.difficultFighters[Math.floor(Math.random()
-      * game.difficultFighters.length)];
+  } else if (game.gameType === "mythical") {
+    game.computer.fighter = game.mythicalFighters[Math.floor(Math.random()
+      * game.mythicalFighters.length)];
     console.log(game.computer.fighter);
     return game.computer.fighter
   }
@@ -83,7 +83,7 @@ function randomizeComputerFighter() {
 function showFighters() {
   hide(gameTypes);
   hide(classicFightersContainer);
-  hide(difficultFightersContainer);
+  hide(mythicalFightersContainer);
   show(chosenFightersContainer);
   show(changeGameButton);
   chosenFightersContainer.innerHTML = `
@@ -102,11 +102,11 @@ function resetGameBoard() {
   hide(gameTypes);
   hide(chosenFightersContainer);
   if (game.gameType === "classic") {
-    hide(difficultFightersContainer)
+    hide(mythicalFightersContainer)
     showClassicGame()
-  } else if (game.gameType === "difficult") {
+  } else if (game.gameType === "mythical") {
     hide(classicFightersContainer)
-    showDifficultGame()
+    showMythicalGame()
   }
 };
 
@@ -117,6 +117,6 @@ function changeGame() {
   show(gameTypes);
   hide(chosenFightersContainer);
   hide(classicFightersContainer);
-  hide(difficultFightersContainer);
+  hide(mythicalFightersContainer);
   subheader.innerText = `Choose Your Game!`
 };
