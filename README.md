@@ -10,6 +10,8 @@ For my final Mod 1 solo project, I designed an application that allows a user to
 * HTML
 * CSS
 
+[Deployed Link](https://stephanieguzm.github.io/rock-paper-scissors-project/) 
+
 ## Setup Instructions
 * At the top of the repository, click the green Code button
 * Copy the `SSH` link in the pop-up window: `git@github.com:stephanieguzm/rock-paper-scissors-project.git`
